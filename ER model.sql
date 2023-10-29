@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS public.books
 CREATE TABLE IF NOT EXISTS public.book_info
 (
     book_id integer NOT NULL,
-    borrower_id integer NOT NULL,
     user_id integer NOT NULL,
     borrower_name text NOT NULL,
     borrow_date date NOT NULL,
