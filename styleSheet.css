@@ -1,0 +1,53 @@
+.centertxt{
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    font-size: large;
+}
+
+.info{
+    white-space: pre;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.boldt{
+    font-weight: bold; 
+}
+
+.buttonPosition{
+    position: absolute;
+    top: 90%;
+    left: 80%;
+}
+
+.threeLines{
+    position: absolute;
+    top:2%;
+    left: 3%;
+}
+
+.profileMark{
+    position: absolute;
+    top:1%;
+    left: 90%;
+}
+
+#pages{
+    display: none;
+    /* display:block */
+}
+
+table{
+    width: 110px;
+    height: 100px;
+    text-align: center;
+    border: 2px solid;
+    border-collapse: collapse;
+}
+
+td{
+    width: 110px;
+    height: 30px;
+    border: 2px solid;
+}
