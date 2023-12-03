@@ -2,53 +2,61 @@
 -- Please log an issue at https://redmine.postgresql.org/projects/pgadmin4/issues/new if you find any bugs, including reproduction steps.
 BEGIN;
 
-
 CREATE TABLE IF NOT EXISTS public.users
 (
-    user_id integer NOT NULL,
-    user_name text NOT NULL,
-    user_address text,
-    password text NOT NULL,
-    PRIMARY KEY (user_id)
-);
+    "userID" integer NOT NULL,
+    "userName" text COLLATE pg_catalog."default" NOT NULL,
+    "userAddress" text COLLATE pg_catalog."default",
+    password text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT users_pkey PRIMARY KEY ("userID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.users
+    OWNER to postgres;
 
 CREATE TABLE IF NOT EXISTS public.books
 (
-    book_id integer NOT NULL,
-    name text NOT NULL,
-    author text,
-    "category " text,
-    published_date date,
-    language text NOT NULL,
-    location text NOT NULL,
-    page_amount integer,
+    "bookID" bigint NOT NULL,
+    title text COLLATE pg_catalog."default" NOT NULL,
+    author text COLLATE pg_catalog."default",
+    category text COLLATE pg_catalog."default" NOT NULL,
+    "publishedYear" integer,
+    language text COLLATE pg_catalog."default" NOT NULL,
+    location text COLLATE pg_catalog."default" NOT NULL,
+    "pageAmount" integer,
     availability boolean NOT NULL,
-    PRIMARY KEY (book_id)
-);
+    CONSTRAINT books_pkey PRIMARY KEY ("bookID")
+)
 
-CREATE TABLE IF NOT EXISTS public.book_info
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.books
+    OWNER to postgres;
+
+CREATE TABLE IF NOT EXISTS public."booksInfo"
 (
-    book_id integer NOT NULL,
-    user_id integer NOT NULL,
-    borrower_name text NOT NULL,
-    borrow_date date NOT NULL,
-    return_date date NOT NULL,
-    PRIMARY KEY (book_id, borrower_id, user_id)
-);
+    "bookID" bigint NOT NULL,
+    "userID" integer NOT NULL,
+    "borrowName" text COLLATE pg_catalog."default" NOT NULL,
+    "borrowDate" date NOT NULL,
+    "returnDate" date NOT NULL,
+    CONSTRAINT "booksInfo_pkey" PRIMARY KEY ("bookID"),
+    CONSTRAINT "booksInfo_bookID_fkey" FOREIGN KEY ("bookID")
+        REFERENCES public.books ("bookID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "booksInfo_userID_fkey" FOREIGN KEY ("userID")
+        REFERENCES public.users ("userID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
 
-ALTER TABLE IF EXISTS public.book_info
-    ADD FOREIGN KEY (book_id)
-    REFERENCES public.books (book_id) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+TABLESPACE pg_default;
 
+ALTER TABLE IF EXISTS public."booksInfo"
+    OWNER to postgres;
 
-ALTER TABLE IF EXISTS public.book_info
-    ADD FOREIGN KEY (user_id)
-    REFERENCES public.users (user_id) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
 
 END;
