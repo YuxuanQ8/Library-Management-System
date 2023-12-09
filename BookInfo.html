@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <meta charset = "utf-8">
+    <style>
+		@import url(styleSheet.css);
+		table {
+  			border-collapse: collapse;
+  			width: 100%;
+            position: absolute;
+            top: 20%;
+		}
+
+		td, th {
+  			border: 1px solid #000000;
+  			text-align: left;
+  			padding: 8px;
+		}
+	</style>
+	
+    <head>
+        <title>BookInfo</title>
+    </head>
+	<body>
+		<div class = "threeLines">
+			<img id = "icon" style = "cursor: pointer;" src = "three_lines-removebg-preview.png" width = "82px" height = "50px" onclick = "showTable()">
+			<div id = "pages">
+				<table>
+					<tbody>
+						<tr><td>Books' Status</td></tr>
+						<tr><td>Borrowing Info</td></tr>
+						<tr><td>Borrowing</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class = "profileMark">
+			<div>
+				<a href="profile.html"><img src = "profile_image-removebg-preview.png" width = "80px" height = "80px"></a>
+			</div>
+		</div>
+		
+		<table>
+  			<tr>
+    			<th>Book ID</th>
+  				<th>Title</th>
+    			<th>Author</th>
+                <th>Category</th>
+                <th>Publish Year</th>
+                <th>Language</th>
+                <th>Location</th>
+				<th>Page Amount</th>
+				<th>Availability</th>
+            </tr>
+  			<tr>
+    			<th></th>
+  				<th></th>
+    			<th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>	
+		</table>
+    </body>
+</html>
