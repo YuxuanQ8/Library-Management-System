@@ -2,7 +2,7 @@
 <html>
     <meta charset = "utf-8">
     <style>
-	@import url(styleSheet.css);
+	@import url(newStyleSheet.css);
 	.passwordReseter{
 		position: absolute;
 		right: 80%;
@@ -16,13 +16,12 @@
     <body>
     	<h2>Login</h2>
 		<div class = "Background">
-			<div class = "columnMaker" style = "background-color:#FFFFFF;"></div>
-		</div>
-		
-		<div class = "Entries">
-			<div class = "rowPlacer">
-				<span class = "boldt">User ID:　　</span><input><br />
-				<span class = "boldt">Password:　  </span><input>
+			<div class = "columnMaker" style = "background-color:#FFFFFF;">
+				<div class = "rowPlacer">
+					<span class = "boldt">User ID:　　</span><input id="userid"><br />
+					<span class = "boldt">Password:　  </span><input id="pwd"><br>
+					<a href="BookInfo.html"><button type="button" id="log">Login</button onclick="login()"></a>
+				</div>
 			</div>
 		</div>
 		
@@ -33,6 +32,8 @@
 			<div class = "passwordReseter">
 				<a href = "reset.html"><input type = "button" value = "Forgot Password?" style = "float: right;"></a>
 			</div>
-        </div>	
+        </div>
 	</body>
+
+
 </html>
