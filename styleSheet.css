@@ -38,41 +38,17 @@
     /* display:block */
 }
 
-table{
-    width: 110px;
-    height: 100px;
-    text-align: center;
-    border: 2px solid;
+table {
     border-collapse: collapse;
+    width: 98%;
+  position: absolute;
+  top: 20%;
+  table-layout: fixed;
 }
 
-td{
-    width: 110px;
-    height: 30px;
-    border: 2px solid;
-}
-
-
-
-.columnMaker{
-	margin: auto;
-    width: 80%;
-	border: 3px solid black;
-	padding: 10px;
-	display: flex;
-    align-content: center;
-    align-items: center;
-	height: 250px;
-}
-
-.rowPlacer{
-    position: absolute;
-   	top: 30%;
-    left: 30%;
-}
-
-.buttonPlacer{
-	position: absolute;
-	right: 5%;
-	bottom: 20%;
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding-right: 5%;
+  word-wrap: break-word;
 }
