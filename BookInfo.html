@@ -5,15 +5,17 @@
 		@import url(styleSheet.css);
 		table {
   			border-collapse: collapse;
-  			width: 100%;
+  			width: 98%;
             position: absolute;
             top: 20%;
+			table-layout: fixed;
 		}
 
 		td, th {
   			border: 1px solid #000000;
   			text-align: left;
-  			padding: 8px;
+  			padding-right: 5%;
+			word-wrap: break-word;
 		}
 	</style>
 	
@@ -21,18 +23,20 @@
         <title>BookInfo</title>
     </head>
 	<body>
-		<div class = "threeLines">
-			<img id = "icon" style = "cursor: pointer;" src = "three_lines-removebg-preview.png" width = "82px" height = "50px" onclick = "showTable()">
-			<div id = "pages">
-				<table>
-					<tbody>
-						<tr><td>Books' Status</td></tr>
-						<tr><td>Borrowing Info</td></tr>
-						<tr><td>Borrowing</td></tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+        <div class="threeLines">
+            <img id="icon" style="cursor: pointer;" src="three_lines-removebg-preview.png" width="82px" height="50px" onclick="showTable()">
+            <div id = "pages">
+                <div style="border: 2px solid; text-align: center;">
+                    <span><a href="borrowInfo.html" style="color: black;text-decoration: none;">Borrow Info</span>
+                </div>
+                <div style="border: 2px solid; text-align: center;">
+                    <span><a href="borrowing.html" style="color: black;text-decoration: none;">Borrowing</a></span>
+                </div>
+                <div style="border: 2px solid; text-align: center;">
+                    <span><a href="loginpage.html" style="color: black;text-decoration: none;">Log Out</span>
+                </div>
+            </div>
+        </div>
 
 		<div class = "profileMark">
 			<div>
@@ -41,26 +45,90 @@
 		</div>
 		
 		<table>
-  			<tr>
-    			<th>Book ID</th>
-  				<th>Title</th>
-    			<th>Author</th>
-                <th>Category</th>
-                <th>Publish Year</th>
-                <th>Language</th>
-                <th>Location</th>
-				<th>Page Amount</th>
-				<th>Availability</th>
-            </tr>
-  			<tr>
-    			<th></th>
-  				<th></th>
-    			<th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>	
+			<thead>
+				<tr>
+					<th>Book ID</th>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Category</th>
+					<th>Publish Year</th>
+					<th>Language</th>
+					<th>Location</th>
+					<th>Page Amount</th>
+					<th>Availability</th>
+				</tr>
+			</thead>
+  			
+			<tbody>
+				<tr>
+					<td>9780224089258</td>
+					<td>Reality Is Broken: Why Games Make Us Better and How They Can Change the World</td>
+					<td>Jane McGonigal</td>
+					<td>Video Game</td>
+					<td>2011</td>
+					<td>English</td>
+					<td>A16</td>
+					<td>388</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>9780387945590</td>
+					<td> Statistical learning theory</td>
+					<td>Vladimir Naumovich</td>
+					<td>Psychology</td>
+					<td>1998</td>
+					<td>English</td>
+					<td>B3</td>
+					<td>736</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>9780803604094</td>
+					<td>Essentials of anatomy and physiology</td>
+					<td>Scanlon, Valerie C. & Sanders, Tina</td>
+					<td>Physiology</td>
+					<td>1990</td>
+					<td>English</td>
+					<td>H26</td>
+					<td>N/A</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>9781032338224</td>
+					<td>Modernity, History, and Politics in Czech Art </td>
+					<td>Marta Filipova</td>
+					<td>Art</td>
+					<td>2019</td>
+					<td>English</td>
+					<td>D8</td>
+					<td>N/A</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>9781484295809</td>
+					<td>Creative Prototyping with Generative AI: Augmenting Creative Workflows with Generative AI </td>
+					<td>Patrick Parra Pennefather</td>
+					<td>Technology</td>
+					<td>2023</td>
+					<td>English</td>
+					<td>A10</td>
+					<td>N/A</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>9788415594918</td>
+					<td>Turtles All the Way Down</td>
+					<td>John Green</td>
+					<td>Novel</td>
+					<td>2017</td>
+					<td>English</td>
+					<td>F1</td>
+					<td>286</td>
+					<td>Yes</td>
+				</tr>
+			</tbody>
 		</table>
     </body>
+
+	<script type="text/javascript" src="event.js"></script>
 </html>
